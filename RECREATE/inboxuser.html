@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/images-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 20px solid #bb7d20;
+}
+
+.logomain {
+  height: 150px;
+  margin-right: 20px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.titlename {
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.faqscorner {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 13;
+}
+
+.faqsicon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.faqsicon:hover {
+  transform: scale(1.1);
+}
+
+.inpass {
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 8px;
+  height: 30px;
+  border: 1px solid #ddd;
+}
+
+.backbtn {
+  align-items: center;
+  background-color: orange;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  height: 61px;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 131px;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.typetxt {
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  letter-spacing: 0px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.submitbtn {
+  width: 100%;
+  max-width: 236px;
+  height: 61px;
+  border-radius: 8px;
+  background-color: #26BC38;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  align-self: center;
+}
+
+.submitbtn:hover {
+  background-color: #218f2d;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.inbox-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.unread-message {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+.read-message {
+  font-weight: normal;
+  background-color: #fff;
+}
+
+.inbox-item p {
+  margin: 0;
+}
+
+.document-link {
+  display: block;
+  margin-top: 10px;
+  color: blue;
+}
+
+.document-link:hover {
+  text-decoration: underline;
+}
+
+.modal-fullscreen {
+  max-width: 100%;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 24px;
+}
+
+.modal-body p {
+  font-size: 16px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer button {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-text h1 {
+    font-size: 24px;
+  }
+
+  .header-text h3 {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+  <div class="header-text">
+    <h1>BARANGAY CONNECT</h1>
+    <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+  </div>
+</div>
+
+<div class="main">
+  <a href="javascript:history.back()" class="backbtn">BACK</a>
+  <h1 class="titlename">INBOX</h1>
+</div>
+
+
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel">Message Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+                <a id="modalDocumentUrl" href="#" class="document-link" download>Download Document</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="cancelRequestBtn" class="btn btn-danger" style="display: none;">Cancel Document Request</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.inbox-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+        const message = this.getAttribute('data-message');
+        const documentUrl = this.getAttribute('data-document-url');
+
+        document.getElementById('modalMessage').textContent = message;
+        const modalDocumentUrl = document.getElementById('modalDocumentUrl');
+        if (documentUrl) {
+            modalDocumentUrl.style.display = 'block';
+            modalDocumentUrl.href = documentUrl;
+        } else {
+            modalDocumentUrl.style.display = 'none';
+        }
+
+        const id = this.getAttribute('data-id');
+
+        // If needed, you can add AJAX call here to mark the message as read
+        const modal = new bootstrap.Modal(document.getElementById('messageModal'));
+        modal.show();
+    });
+});
+</script>
+
+</body>
+</html>

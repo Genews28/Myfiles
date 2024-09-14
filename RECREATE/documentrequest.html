@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('img/0446jfmanlapig-lawy-welcome-highway-capas-tarlacfvf-09-2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); 
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 20px solid #bb7d20;
+    z-index: 1; 
+    position: relative;
+}
+
+.logomain {
+    height: 150px;
+    margin-right: 20px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 70px;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 1px;
+    font-family: 'Stencil', 'Arial', sans-serif;
+}
+
+.header-text h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 100px);
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+footer {
+    position: relative; 
+    height: 100px; 
+    z-index: 1; 
+
+}
+
+.faqscorner {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.faqsicon {
+    width: 50px; 
+    height: 50px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+}
+
+.faqsicon:hover {
+    transform: scale(1.1); 
+}
+
+.imggcash {
+    max-width: 5%;
+    flex-direction: column;
+}
+
+.logosub {
+    width: 200px;
+    padding-left: 130px;
+}
+
+.payment-procedure {
+    position: absolute;
+    top: 30%;
+    left: 64%;
+    font-family: var(--font-family-lilita_one);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    height: 485px;
+    margin-top: 25px;
+    font-family: Arial, sans-serif;
+    z-index: 5;
+}
+
+.payment-procedure h2 {
+    font-size: 46px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.payment-procedure p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.payment-procedure ul {
+  font-size: 25px;
+
+}
+
+.payment-procedure .contact-info {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.document-request-form {
+    color: var(--black);
+    font-family: var(--font-family-lilita_one);
+    font-size: 50px;
+    font-weight: bold;
+    left: 441px;
+    letter-spacing: 0;
+    line-height: 57.4px;
+    position: absolute;
+    text-align: center;
+    padding: 20px 0;
+    letter-spacing: 1px;
+     text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    top: 30px;
+    white-space: nowrap;
+    width: 1021px;
+    z-index: 2; 
+
+
+
+
+
+  
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+    z-index: 2;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    right: 300px;
+    top: 10px;
+    height: 480px;
+    width: 1000px;
+    position: inherit;
+    backdrop-filter: blur(10px);
+}
+
+.form-left, .form-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 30px;
+}
+
+.typecss {
+    width: 100%;
+    height: 53px;
+    border-radius: 8px;
+    border: 1px solid #0000000d;
+    padding-left: 10px;
+}
+
+.longcss {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #0000000d;
+    padding: 10px 10px;
+}
+
+.selectput {
+    width: 100%;
+    height: 53px;
+    border: 1px solid #0000000d;
+    border-radius: 8px;
+    padding-left: 10px;
+}
+.files{
+    padding-left: 100px;
+}
+
+.filelabel{padding-left: 1px;
+}
+
+.field {
+    background-color: #26BC38;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px #0000000d;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.logbut {
+    width: 100%;
+    max-width: 236px;
+    height: 61px;
+    border-radius: 8px;
+    background-color: #26BC38;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.logbut:hover {
+    background-color: #218f2d;
+}
+
+.backbtn {
+  align-items: center;
+  background-color: orange;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  height: 61px;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 131px;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+  <div class="header-text">
+    <h1>BARANGAY CONNECT</h1>
+    <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="main">
+    <a href="javascript:history.back()" class="backbtn">BACK</a>
+    <div class="document-request-form">DOCUMENT REQUEST FORM</div>
+    <div class="form-container">
+      <div class="form-left">
+        <div>TYPE OF DOCUMENT REQUEST:</div>
+        <select class="selectput" id="document_type" name="document_type" required>
+          <option value="">Choose Here</option>
+          <option value="Barangay Clearance">Barangay Clearance</option>
+          <option value="Barangay Indigency">Barangay Indigency</option>
+          <option value="Barangay Residency">Barangay Residency</option>
+        </select>
+
+        <div>FULL NAME:</div>
+        <input class="typecss" name="full_name" type="text" placeholder="Type Here" required>
+
+        <div>E-MAIL ADDRESS:</div>
+        <input class="typecss" name="email" type="email" placeholder="Type Here" required>
+
+        <div>RESIDENTIAL ADDRESS:</div>
+        <textarea class="longcss" name="residential_address" placeholder="Type Here" required></textarea>
+
+        <div>PURPOSE OF REQUEST:</div>
+        <textarea class="longcss" name="purpose_of_request" placeholder="Type Here" required></textarea>
+      </div>
+
+      <div class="form-right">
+        <img class="logosub" src="img/qrcode_8b9c18c62a1336b7959409ed8d13cc31.png" alt="InstaPay QR Code">
+        <div>GCASH REFERENCE #:</div>
+        <input class="typecss" name="gcash_reference" type="text" placeholder="Type Here" required>
+        <div class="field">
+          <label for="file-upload" class="filelabel"><img class="imggcash" src="img/2192072-200-1.png" alt="File Upload Icon">ATTACH PROOF OF PAYMENT HERE:</label>
+          <input class="files" name="file" id="file-upload" type="file" accept=".pdf,.png,.jpeg" required>  
+        </div>
+        <button type="submit" class="logbut">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="payment-procedure">
+  <h2>Payment Procedure</h2>
+  <p>We are pleased to inform you that the following documents are available at the respective costs:</p>
+  <ul>
+      <li>Barangay Clearance = PXX.XX</li>
+      <li>Barangay Indigency = PXX.XX</li>
+      <li>Barangay Residency = PXX.XX</li>
+  </ul>
+  <p>We kindly request that payments for these documents be made through GCash.</p>
+  <p>The GCash number of our Barangay and a QR Code for easy transactions are attached for your convenience. Thank you for your cooperation.</p>
+  <div class="contact-info">
+      JUAN DELA CRUZ<br>
+      0955 630 1908<br>
+      Barangay Lawy Secretary
+  </div>
+</div>
+<footer><div class="faqscorner"><img class="faqsicon" src="img/faqs-icon-3@2x.png" alt="File Upload Icon"></div></footer>
+</body>
+</html>

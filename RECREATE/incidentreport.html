@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/images-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 20px solid #bb7d20;
+}
+
+.logomain {
+  height: 150px;
+  margin-right: 20px;
+}
+.backbtn {
+  align-items: center;
+  background-color: orange;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  height: 61px;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 131px;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.fontweight{
+  font-size: 20px;
+  font-style: bold;
+
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.titlename {
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  border: 1px solid #bb7d20; 
+  border-radius: 30px; 
+  background-color: #ffffff80; 
+
+}
+
+
+.alignput {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 30px;
+  font-size: medium;
+  border: #00000040;
+  border-radius: 8px;
+
+}
+
+.sizearea {
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  font-size: large;
+  border: #00000040;
+  border-radius: 8px;
+}
+
+.submitbtn {
+  margin-top: 2S0px;
+  width: 100%;
+  max-width: 236px;
+  height: 61px;
+  border-radius: 8px;
+  background-color: #26BC38;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  align-self: center;
+}
+
+.submitbtn:hover {
+  background-color: #218f2d;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-text h1 {
+    font-size: 24px;
+  }
+
+  .header-text h3 {
+    font-size: 16px;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+footer {
+    position: relative; 
+    height: 100px; 
+    z-index: 1; 
+}
+
+.faqscorner {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+}
+
+.faqsicon {
+    width: 50px; 
+    height: 50px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+}
+
+.faqsicon:hover {
+    transform: scale(1.1); 
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+  <div class="header-text">
+    <h1>BARANGAY CONNECT</h1>
+    <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+  </div>
+</div>
+
+<div class="main">
+  <a href="javascript:history.back()" class="backbtn">BACK</a>
+  <h1 class="titlename">INCIDENT REPORT FORM</h1>
+  <form action="login.php" method="post">
+    <div class="fontweight">COMPLAINANT:</div>
+    <input class="alignput" type="text" id="complainant" name="complainant" placeholder="Type Here." required>
+    <div class="fontweight">COMPLAINEE:</div>
+    <input class="alignput" type="text" id="complainee" name="complainee" placeholder="Type Here." required>
+    <div class="fontweight">PHONE NUMBER:</div>
+    <input class="alignput" type="phone" id="phone" name="phone" placeholder="Type Here." required>
+    <div class="fontweight">INCIDENT REPORT:</div>
+    <textarea class="sizearea" id="incident_report" name="incident_report" placeholder="Type Here." required></textarea>
+    <button type="submit" name="submit" class="submitbtn">SUBMIT</button>
+  </form>
+</div>
+
+<footer>
+  <div class="faqscorner">
+    <img class="faqsicon" src="img/faqs-icon-3@2x.png" alt="File Upload Icon">
+  </div>
+</footer>
+   
+</body>
+</html>

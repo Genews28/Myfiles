@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/428710730-122135006120122210-3298862358378094893-n-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+body:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 165, 0, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.formgender{
+  padding: 10px;
+  width: 500px;
+  height: 20px;
+  border-radius: 8px; 
+  background-color: #ffffff; 
+  text-align: center;
+}
+.header {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 20px solid #bb7d20;
+}
+
+.logomain {
+  height: 150px;
+  margin-right: 20px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+.imggcash {
+    max-width: 5%;
+    flex-direction: column;
+}
+
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.titlename {
+  color: white;
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #bb7d20; 
+  border-radius: 30px; 
+  background-color: #ffffff80; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.indet, .dateput, .proofselect, .files{
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  
+}
+
+.checkbox {
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.files {
+  background-color: #26BC38;
+  color: white;
+}
+
+.formcheckbox {
+  grid-column: span 3;
+  margin-bottom: 30px;
+ 
+  text-align: center;
+}
+
+button.submitbtn { 
+    margin-top: 20px;
+  width: 20%;
+  height: 70%;
+  border-radius: 8px;
+  background-color: #26BC38;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  
+}
+
+.submitbtn:hover {
+  background-color: #218f2d;
+}
+
+.backbtn {
+  align-items: center;
+  background-color: orange;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  height: 61px;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 131px;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+  <div class="header-text">
+    <h1>BARANGAY CONNECT</h1>
+    <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+  </div>
+</div>
+
+<div class="main">
+<a href="javascript:history.back()" class="backbtn">BACK</a>
+  <h1 class="titlename">REGISTRATION</h1>
+  <form action="login.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input class="indet" type="text" id="fname" name="fname" required placeholder="First Name">
+    </div>
+    <div class="form-group">
+      <label for="miname">Middle Name</label>
+      <input class="indet" type="text" id="miname" name="miname" required placeholder="Middle Name">
+    </div>
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input class="indet" type="text" id="lname" name="lname" required placeholder="Last Name">
+    </div>
+    <div class="form-group">
+      <label for="sname">Street</label>
+      <input class="indet" type="text" id="sname" name="sname" required placeholder="Street">
+    </div>
+    <div class="form-group">
+      <label for="bname">Barangay</label>
+      <input class="indet" type="text" id="bname" name="bname" required placeholder="Barangay">
+    </div>
+    <div class="form-group">
+      <label for="mname">Municipality</label>
+      <input class="indet" type="text" id="mname" name="mname" required placeholder="Municipality">
+    </div>
+    <div class="form-group">
+      <label for="pname">Province</label>
+      <input class="indet" type="text" id="pname" name="pname" required placeholder="Province">
+    </div>
+    <div class="form-group">
+        <label for="date">Date of Birth</label>
+        <input class="dateput" type="date" id="date" name="date" required>
+      </div>
+    <div class="form-group">
+      <label for="phone">Active Phone Number</label>
+      <input class="indet" type="tel" id="phone" name="phone" required placeholder="Phone Number">
+    </div>
+    <div class="form-group">
+      <label for="email">Active Email Address</label>
+      <input class="indet" type="email" id="email" name="email" required placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="indet" type="password" id="password" name="password" required placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="retype_password">Confirm Password</label>
+      <input class="indet" type="password" id="retype_password" name="retype_password" required placeholder="Confirm Password">
+    </div>
+    <div class="form-group">
+        <label for="gender" class="genderlabel">Gender</label>
+    <div class="formgender">
+      <label><input type="radio" id="gender" name="gender" value="male" required> Male</label>
+      <label><input type="radio" id="gender" name="gender" value="female" required> Female</label>
+      <label><input type="radio" id="gender" name="gender" value="other" required> Other</label></div>
+    </div>
+    <div class="form-group">
+      <label for="proof">Proof of Residency</label>
+      <select class="proofselect" name="proof" id="proof" required>
+        <option value="Barangay ID">Barangay ID</option>
+        <option value="Barangay Certificate">Barangay Certificate</option>
+        <option value="Business Permit">Business Permit</option>
+        <option value="Driver's License">Driver's License</option>
+        <option value="SSS UMID ID">SSS UMID ID</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="file">Upload proof of residency</label>
+      <input type="file" class="files" name="file" id="file" required>
+    </div>
+    <div class="formcheckbox">
+      <input type="checkbox" id="declare" name="declare" required>
+      <label for="declare">I hereby declare that the information provided is true and correct.</label>
+      <br>
+      <button class="submitbtn" type="submit" name="button">REGISTER</button>
+    </div>
+    
+
+  </form>
+</div>
+
+</body>
+</html>

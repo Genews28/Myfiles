@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/images-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 20px solid #bb7d20;
+}
+
+.logomain {
+  height: 150px;
+  margin-right: 20px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  max-width: 2000px;
+  height: 100%;
+}
+
+.backbtn {
+  align-items: center;
+  background-color: orange;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  height: 61px;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 131px;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+  flex: 1;
+  max-width: 100%;
+  max-height: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  overflow-y: auto; 
+
+  border-radius: 50px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #bb7d20;
+}
+
+.card p {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.textareaput {
+  margin: 20px 0;
+  padding: 15px;
+  width: 90%;
+  height: 50%;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  outline: none;
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.titlename {
+  color: rgb(2, 2, 2);
+  font-size: 50px;
+  font-weight: 900;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(71, 69, 69, 0.7);
+}
+.textareaput:focus {
+  border-color: #bb7d20;
+}
+
+.submitbtn {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #26BC38;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitbtn:hover {
+  background-color: #218f2d;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+  <div class="header-text">
+    <h1>BARANGAY CONNECT</h1>
+    <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+  </div>
+</div>
+
+<div class="main">
+    <a href="javascript:history.back()" class="backbtn">BACK</a>
+  <h1 class="titlename">FREQUENTLY ASKED QUESTIONS</h1>
+  <div class="cards">
+    <div class="card">
+      <h3>English</h3>
+      <p class="faq1 inter-bold-black-14-5px">
+        <span class="inter-bold-black-14-5px">How will </span
+        ><span class="inter-bold-black-14-5px-2">Barangay Connect</span
+        ><span class="inter-bold-black-14-5px"> benefit its residents? <br /></span
+        ><span class="inter-italic-normal-black-14-5px">The </span
+        ><span class="inter-bold-black-14-5px-2">Barangay Connect</span
+        ><span class="inter-italic-normal-black-14-5px">
+          aims to provide its residents a smoother operations, fairer services, improved accessibility and service
+          provided.<br /></span
+        ><span class="span-1"><br /></span><span class="inter-bold-black-14-5px">Ano ang layunin ng </span
+        ><span class="inter-bold-black-14-5px-2">Barangay Connect</span
+        ><span class="inter-bold-black-14-5px">? <br /></span
+        ><span class="inter-italic-normal-black-14-5px">Binibigyang-daan ng </span
+        ><span class="inter-bold-black-14-5px-2">Barangay Connect</span
+        ><span class="inter-italic-normal-black-14-5px">
+          ang mga residente ng barangay ng tamang impormasyon ukol sa bawat resident, magbigay ng mga serbisyo ng
+          barangay online, at magsulong ng epektibong pamamahala at accessibility(madaling paggamit)para sa
+          pagsubaybay, reference, at pag-verify <br /></span
+        ><span class="span-1"><br /></span><span class="inter-bold-black-14-5px">Nanu ya layunin ing</span
+        ><span class="inter-bold-black-14-5px-2"> Barangay Connect? <br /></span
+        ><span class="inter-italic-normal-black-14-5px"
+          >Mamye yang dalan para kareng residenti naning barangay, makasaad la reng karelang indibidual a
+          impormasyun ukol keng bawat residenti, manabut serbisyu online, at isulong ing epektibung pamamahala ampo
+          accessibility (masagling pag gamit) para king pagsubaybay, reference, pag verify.</span
+        >
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Tagalog</h3>
+      <p class="anong-mga-serbisyo-a inter-bold-black-12px">
+        <span class="inter-bold-black-12px"
+          >Anong mga serbisyo ang maaaring ma-access ng mga residente sa pamamagitan ng Barangay Connect?
+          <br /></span
+        ><span class="inter-normal-black-12px"
+          >Nag-aalok ang barangay connect ng mga serbisyo tulad ng:<br />Impormasyong nauugnay sa
+          kalusugan/sakuna.<br />Kahilingan sa serbisyo ng dokumento.<br />Mga Konsultasyon sa Serbisyo sa Pag-book
+          ng mga barangay officials.<br />Pag-uulat ng insidente.<br /><br /></span
+        ><span class="inter-bold-black-12px"
+          >Nanu lareng serbisyung malyari ng a biye ing Barangay Connect kareng residenti na? <br /></span
+        ><span class="inter-normal-black-12px"
+          >Impormasyung ugnay king kalusugan.<br />Manyad dokumento online.<br />Consultation booking para kareng
+          Barangay Officials at residenti.<br />Pamag-ulat ning insidenti.</span
+        >
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Kapampangan</h3>
+      <p>
+        <span>How can residents register through the </span
+        ><span>Barangay Connect </span
+        ><span>platform? <br /></span
+        ><span>Residents can register seamlessly on the Barangay Connect platform by providing their full name, address,
+          proof of residency, and birthdate. This essential information ensures a hassle-free registration
+          process.<br /></span
+        ><span><br /></span
+        ><span>Paano makakapagrehistro ang mga residente sa pamamagitan ng </span
+        ><span>Barangay Connect</span
+        ><span> platform? <br /></span
+        ><span>Maaaring magparehistro ang mga residente sa platform ng Barangay Connect sa pamamagitan ng pagbibigay ng
+          kanilang buong pangalan, address, patunay ng paninirahan, at petsa ng kapanganakan. Tinitiyak ng
+          mahalagang impormasyong ito ang walang problemang proseso ng pagpaparehistro.<br /><br /></span
+        ><span >Pakananu lang mag rehistru reng residenti naning barangay keng </span
+        ><span>Barangay Connect</span
+        ><span> platform? <br /></span
+        ><span>Makapag rehistru la reng residenti keng Barangay Connect keng pamamagitan ning buung lagyu, address,
+          proof of residency, ampo ing karelang kapanganakan.<br /><br /></span
+        ><span>Will the </span
+        ><span>Barangay Connect</span
+        ><span> be available 24/7? <br /></span
+        ><span>The Barangay Connect is always accesible 24/7, but the accepting of request and admin will only be
+          available during their office hours.<br /></span
+        ><span><br /></span
+        ><span>Magagamit ba ang </span
+        ><span>Barangay Connect</span
+        ><span> 24/7?&nbsp;&nbsp;<br /></span
+        ><span>Ang Barangay Connect ay palaging naa-access 24/7, ngunit ang pagtanggap ng kahilingan at admin ay
+          magagamit lamang sa oras ng kanilang opisina. <br /></span
+        ><span><br /></span
+        ><span>Agamit de ba ing</span
+        ><span> Barangay Connect</span
+        ><span> 24/7? <br /></span
+        ><span>Ing Barangay Connect maka busni ya 24/7, oneng pag office hours la mu reng pagtanggap ning kahilingan,dokumentu ampo keng admin&#34;</span>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h3>Feedback</h3>
+      <p>IF YOU HAVE ANY SUGGESTIONS, FEEL FREE TO SEND IT HERE.</p>
+      <form action="faqs.php" method="post">
+        <textarea class="textareaput" name="text" placeholder="Type your feedback here" required></textarea>
+        <button class="submitbtn" type="submit" name="send">SEND</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

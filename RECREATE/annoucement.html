@@ -1,0 +1,246 @@
+<?php
+require_once 'database.php';
+
+// Fetch announcements from the database
+$sql = "SELECT id, type, message, image_url, date_created FROM announcements ORDER BY date_created DESC";
+$result = $conn->query($sql);
+
+$announcements = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $announcements[] = $row;
+    }
+}
+
+$conn->close();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <style>
+    .bg-background {
+      background-color: #f3f4f6; /* Light gray background */
+    }
+    .health-announcement {
+      background-color: #10b981; /* Green for health announcements */
+    }
+    .disaster-announcement {
+      background-color: #ef4444; /* Red for disaster announcements */
+    }
+    .announcement-link {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .modal.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .modal-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      max-height: 90%;
+      overflow: auto;
+    }
+    .modal-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .modal-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    .modal-close {
+      background-color: #ef4444; /* Red close button */
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background-color 0.3s ease;
+    }
+    .modal-close:hover {
+      background-color: #dc2626; /* Darker red on hover */
+    }
+    .announcement-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 1.5rem;
+      border-radius: 0.375rem;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+    .announcement-box:hover {
+      transform: translateY(-5px); /* Lift effect on hover */
+    }
+    .grid-cols-custom {
+      grid-template-columns: 1fr 1fr;
+    }
+    .announcement-header {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    .modal-image {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .back-button {
+      background-color: #d1a617; /* Blue button */
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #25eb35; /* Darker blue on hover */
+    }
+
+    .header {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 20px solid #bb7d20;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+.logomain {
+  height: 150px;
+  margin-right: 20px;
+}
+
+.announcementdesign {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffffb2; 
+    padding: 1rem; 
+    border-radius: 0.5rem; 
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+  </style>
+</head>
+<body class="bg-background p-6">
+    <div class="header">
+        <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+        <div class="header-text">
+          <h1>BARANGAY CONNECT</h1>
+          <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+        </div>
+      </div>
+  <div class="announcementdesign">
+    <div class="flex items-center">
+      <h1 class="text-3xl font-bold text-gray-900">Announcements</h1>
+    </div>
+    <div>
+    <a href="javascript:history.back()" class="back-button">BACK</a>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-custom gap-4">
+    <?php foreach ($announcements as $announcement) : ?>
+      <a href="#" class="announcement-link" onclick="openModal('<?php echo htmlspecialchars($announcement['type'] == 'health' ? 'Health Related Information' : 'Disaster Related Information'); ?>', '<?php echo htmlspecialchars($announcement['message']); ?>', '<?php echo htmlspecialchars($announcement['image_url']); ?>', '<?php echo htmlspecialchars($announcement['date_created']); ?>', '<?php echo $announcement['type'] == 'health' ? 'health-announcement' : 'disaster-announcement'; ?>')">
+        <div class="<?php echo $announcement['type'] == 'health' ? 'health-announcement' : 'disaster-announcement'; ?> announcement-box">
+          <h3 class="font-bold text-xl"><?php echo htmlspecialchars($announcement['type'] == 'health' ? 'Health Related Information' : 'Disaster Related Information'); ?></h3>
+          <p class="text-lg"><?php echo htmlspecialchars($announcement['message']); ?></p>
+          <p class="mt-2 text-sm">~ <?php echo htmlspecialchars($announcement['type'] == 'health' ? 'Health Department' : 'Disaster Management'); ?></p>
+          <p class="text-sm">Date: <?php echo htmlspecialchars($announcement['date_created']); ?></p>
+        </div>
+      </a>
+    <?php endforeach; ?>
+  </div>
+
+  <div id="announcement-modal" class="modal">
+    <div class="modal-content">
+      <img id="modal-image" class="modal-image" src="" alt="Announcement Image" style="display: none;">
+      <h2 id="modal-title" class="modal-title"></h2>
+      <p id="modal-message" class="modal-text"></p>
+      <p id="modal-date" class="modal-text"></p>
+      <button id="modal-close" class="modal-close">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, message, imageUrl, date, announcementClass) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-message').textContent = message;
+      document.getElementById('modal-date').textContent = "Date: " + date;
+      
+      const modalImage = document.getElementById('modal-image');
+      if (imageUrl) {
+        modalImage.src = imageUrl;
+        modalImage.style.display = 'block';
+      } else {
+        modalImage.style.display = 'none';
+      }
+
+      document.getElementById('announcement-modal').classList.add('active');
+    }
+
+    document.getElementById('modal-close').addEventListener('click', function() {
+      document.getElementById('announcement-modal').classList.remove('active');
+    });
+  </script>
+</body>
+</html>

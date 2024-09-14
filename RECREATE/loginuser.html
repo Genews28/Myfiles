@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-bottom: 20px solid #bb7d20;
+}
+
+.logomain {
+  height: 150px;
+  margin-right: 20px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.header-text h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 100px); /* Adjust height minus header */
+}
+
+.menu {
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 35%;
+  height: 100%;
+  text-align: center;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+.menu-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: 'Stencil', 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.menu-item {
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.menu-subtitle {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  background-image: url('img/0446jfmanlapig-lawy-welcome-highway-capas-tarlacfvf-09-2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.main:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 165, 0, 0.5); 
+  z-index: 1; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+}
+
+.inpass {
+  width: 100%;
+  border-radius: 10px;
+  height: 56px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+}
+
+.logosub {
+  width: 355px;
+  height: auto;
+  align-self: center;
+}
+
+.logbut {
+  width: 100%;
+  max-width: 236px;
+  height: 61px;
+  border-radius: 8px;
+  background-color: #26BC38;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  align-self: center;
+}
+
+.logbut:hover {
+  background-color: #218f2d;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .menu {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #bb7d20;
+  }
+
+  .main {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-text h1 {
+    font-size: 24px;
+  }
+
+  .header-text h3 {
+    font-size: 16px;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logomain" src="img/logomain.png" alt="LOGOMAIN" />
+  <div class="header-text">
+    <h1>BARANGAY CONNECT</h1>
+    <h3>BARANGAY LAWY CAPAS TARLAC</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="menu">
+    <div class="menu-title">BARANGAY OFFICIALS</div>
+    <div class="menu-item">Hon. Porfirio D. Laxamana Jr.</div>
+    <div class="menu-subtitle">Barangay Chairman</div>
+    <div class="menu-item">Hon. Alfred M. Calara</div>
+    <div class="menu-item">Hon. Abelardo S. Zamora</div>
+    <div class="menu-item">Hon. Joselito D. Guiang</div>
+    <div class="menu-item">Hon. Rommel S. Estabillo</div>
+    <div class="menu-item">Hon. Angelita D. Figuracion</div>
+    <div class="menu-item">Hon. Eduardo Caldamo</div>
+    <div class="menu-item">Hon. Maria B. Escamos</div>
+    <div class="menu-subtitle">Barangay Councilors</div>
+  </div>
+
+  <div class="main">
+    <form action="login.php" method="post">
+      <img class="logosub" src="img/logosub@2x.png" alt="LOGOSUB" />
+      <div><input class="inpass" type="email" id="email" name="email" required placeholder="E-MAIL"></div>
+      <div><input class="inpass" type="password" id="password" name="password" required placeholder="PASSWORD"></div>
+      <button type="submit" name="login" class="logbut">LOGIN</button>
+      <a href="register.php">Create an Account</a>
+      <a href="forgot.php">Forgot Password?</a>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
